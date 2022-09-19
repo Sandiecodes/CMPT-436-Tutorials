@@ -14,6 +14,6 @@ RUN pip install -r requirements.txt
 #Copy all contents to the image created
 COPY . /python-dockerize-app
 
-#ENTRYPOINT ["python"]
+ENTRYPOINT ["python"]
 
-CMD ["python3", "-m" , "flask", "run", "--host=0.0.0.0"]
+#CMD ["helloworld.py"]
