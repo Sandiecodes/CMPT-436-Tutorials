@@ -14,6 +14,6 @@ RUN pip install -r requirements.txt
 #Copy all contents to the image created
 COPY . /python-dockerize-app
 
-EXPOSE 5000
+ENTRYPOINT ["python"]
 
-CMD ["python", "helloworld.py"]
+CMD ["helloworld.py"]
