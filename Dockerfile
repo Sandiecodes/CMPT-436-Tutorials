@@ -1,22 +1,27 @@
+FROM python:latest
+
+#EXPOSE 8000
+
+WORKDIR /usr/src/app
+
+COPY . .
+RUN ls
+ENTRYPOINT [ "python3","socketserver.py" ]
 #pull python image
 
-FROM python:3.8-alpine
+#FROM python:3.8-alpine
 
 # create working directory
-WORKDIR /app
+#WORKDIR /python-server-client
 
-#Copy requirement of app into working directory
-COPY requirements.txt ./
-
-#Install dependencies
-RUN pip install -r requirements.txt
+#Port for server
+#EXPOSE 8000
 
 #Copy all contents to the image created
-COPY . .
+#COPY socketserver.py ./
+#COPY socketclient.py ./ 
 
-EXPOSE 5000
 
-#ENTRYPOINT ["python"]
 
-CMD [ "flask", "run","--host","0.0.0.0","--port","5000"]
-#CMD ["helloworld.py"]
+
+
